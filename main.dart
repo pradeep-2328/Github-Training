@@ -1,110 +1,191 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Myapp());
+  runApp(MaterialApp(
+    home: Home(),
+  ));
 }
 
-class Myapp extends StatelessWidget {
-  const Myapp({Key? key}) : super(key: key);
-
-  get columns => null;
-
-  get rows => null;
-
-  get cells => null;
-
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pradeep Francis',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Hello User !!!',
-            style: TextStyle(fontSize: 50),
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/back.jpg"),
+            fit: BoxFit.cover,
           ),
         ),
-        body: ListView(
-          children: <Widget>[
-            Center(
-              child: Text(
-                'Students Data',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 100.0, left: 20),
+          child: Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  CircleAvatar(
+                    radius: 60,
+                    backgroundImage: AssetImage("assets/images/pradeep1.jpg"),
+                  ),
+                  SizedBox(
+                    width: 60,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        "Pradeep",
+                        style: TextStyle(
+                          fontSize: 50,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Text(
+                        "Software Developer",
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.white,
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 80),
+                child: Column(
+                  children: [
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.bakery_dining,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                        SizedBox(
+                          width: 40,
+                        ),
+                        Text(
+                          "School name",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.home,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 40,
+                        ),
+                        Text(
+                          "Home Address",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: 40,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.person,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 40,
+                        ),
+                        Text(
+                          "Name",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: 40,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.email_rounded,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 40,
+                        ),
+                        Text(
+                          "Email",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      width: 40,
+                    ),
+                    Row(
+                      children: <Widget>[
+                        Icon(
+                          Icons.mobile_friendly_rounded,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: 40,
+                        ),
+                        Text(
+                          "Mobile Number",
+                          style: TextStyle(
+                            fontSize: 18,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
-            ),
-            DataTable(columns: [
-              DataColumn(label: Text('RollNo')),
-              DataColumn(label: Text('Name')),
-              DataColumn(label: Text('Class')),
-              DataColumn(label: Text('School')),
-            ], rows: [
-              DataRow(cells: [
-                DataCell(Text('1')),
-                DataCell(Text('Arya')),
-                DataCell(Text('6')),
-                DataCell(Text('siws')),
-              ]),
-              DataRow(cells: [
-                DataCell(Text('2')),
-                DataCell(Text('surya')),
-                DataCell(Text('7')),
-                DataCell(Text('sies')),
-              ]),
-              DataRow(cells: [
-                DataCell(Text('3')),
-                DataCell(Text('bhavana')),
-                DataCell(Text('12')),
-                DataCell(Text('gnks')),
-              ]),
-              DataRow(cells: [
-                DataCell(Text('4')),
-                DataCell(Text('hari')),
-                DataCell(Text('15')),
-                DataCell(Text('sdt')),
-              ]),
-              DataRow(cells: [
-                DataCell(Text('5')),
-                DataCell(Text('prasad')),
-                DataCell(Text('12')),
-                DataCell(Text('gn')),
-              ]),
-              DataRow(cells: [
-                DataCell(Text('6')),
-                DataCell(Text('shweta')),
-                DataCell(Text('18')),
-                DataCell(Text('trp')),
-              ]),
-              DataRow(cells: [
-                DataCell(Text('7')),
-                DataCell(Text('lina')),
-                DataCell(Text('11')),
-                DataCell(Text('pla')),
-              ]),
-              DataRow(cells: [
-                DataCell(Text('8')),
-                DataCell(Text('reena')),
-                DataCell(Text('11')),
-                DataCell(Text('mandir')),
-              ]),
-              DataRow(cells: [
-                DataCell(Text('9')),
-                DataCell(Text('tom')),
-                DataCell(Text('14')),
-                DataCell(Text('sies')),
-              ]),
-              DataRow(cells: [
-                DataCell(Text('10')),
-                DataCell(Text('seema')),
-                DataCell(Text('11')),
-                DataCell(Text('ypl')),
-              ]),
-            ]),
-          ],
+              SizedBox(
+                height: 50,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text(
+                  "About me:- A quotation is the repetition of a sentence, phrase, or passage from speech or text that someone has said or written. In oral speech, it is the representation of an uttera ",
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 150,
+              ),
+              Text(
+                "Created By Pradeep",
+                style: TextStyle(
+                  fontSize: 10,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
